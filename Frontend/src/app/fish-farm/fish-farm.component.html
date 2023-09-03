@@ -1,0 +1,65 @@
+<app-header></app-header>
+<body>
+    
+    <div class="headtips">
+        <div class="tempreture">
+            <div class="tempicon"><img src="../../assets/avatar.jpeg" alt=""></div>
+            <div class="temp">sunny 30 *C</div>
+        </div>
+        <div class="weathertips">
+            <h2>Weather-Based Care Tips</h2>
+
+            <p>
+                {{suggestion}}
+            </p>
+        </div>
+    </div>
+    <div class="platinguides">
+        <div class="text">
+            <h2>Personal Fish Farming Guides</h2>
+            <p>
+                {{listText[0]}}
+            </p>
+
+        </div>
+        
+        <div class="plantinginputs">
+            <div class="inputs">
+                <input type="text " placeholder="Location" [(ngModel)] ="locationinput">
+                
+                <input type="text " placeholder="water size" [(ngModel)] = "watersizeinput">
+            </div>
+            <div class="plantingbutton">
+                <button mat-raised-button color="primary">Enter</button>
+            </div>
+        </div>
+        <hr>
+        <div class="plantingoutput">
+            <p>{{fishfarmreturn}}</p>
+        </div>
+    </div>
+
+    <div class="diseasemanagement">
+        <div class="text">
+            <h2>Pest and Disease Management</h2>
+        <p>
+            {{listText[1]}}
+        </p>
+        </div>
+        
+
+        <div class="diseaseinputs">
+
+            <input type="text " placeholder="" [(ngModel)]="diseaseinput">
+            
+            <div class="diseasebutton">
+                <button mat-raised-button color="primary">Enter</button>
+            </div>
+        </div>
+        <hr>
+        <div class="plantingoutput">
+            <p>{{diseasemanagmentreturn}}</p>
+        </div>
+    </div>
+</body>
+<app-footer></app-footer>

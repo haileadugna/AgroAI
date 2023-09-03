@@ -1,0 +1,70 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the header and navbar */
+header {
+    background-color: #17A940;
+    color: black;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Style the logo */
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* Style the navbar items */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 20px;
+}
+
+.nav-link:hover {
+    color: #f39c12;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin: 10px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+header .avatar img{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    width: 100px;
+}

@@ -1,0 +1,22 @@
+<app-header></app-header>
+<body>
+    
+    <div class="inputpost">
+        <input type="text" placeholder="share your idea">
+        <span class="send-icon">
+            <i class="fas fa-paper-plane"></i>
+        </span>
+    </div>
+    <div class="posts" *ngFor="let post of posts">
+        <div class="profile">
+           <a href=""><img src="../../assets/avatar.jpeg" alt=""></a> 
+        </div>
+        <div class="poststext">
+            <p class="username">Haile</p>
+            <p>{{post}}</p>
+        </div>
+            
+        <span class="leavecomment"><a href="" class="fas fa-comment"></a></span>
+    </div>
+</body>
+<app-footer></app-footer>

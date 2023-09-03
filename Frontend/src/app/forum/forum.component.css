@@ -1,0 +1,85 @@
+body{
+    padding: 20px 25%;
+}
+/* Style the input and send icon container */
+.inputpost {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Style the input field */
+.inputpost input[type="text"] {
+  flex: 1;
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+}
+
+/* Style the send icon */
+.inputpost .send-icon {
+  font-size: 18px;
+  color: #007bff;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.inputpost .send-icon:hover {
+  color: #0056b3;
+}
+
+/* Style the posts container */
+.posts {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* Style the profile image */
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Style the post text container */
+.poststext {
+  flex: 1;
+  margin-left: 10px;
+}
+
+/* Style the username */
+.username {
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Style individual post text */
+.poststext p {
+  margin: 0;
+  color: #333;
+}
+
+/* Style the comment icon */
+.leavecomment a {
+  font-size: 18px;
+  color: #007bff;
+  cursor: pointer;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.leavecomment a:hover {
+  color: #0056b3;
+}
+
+  

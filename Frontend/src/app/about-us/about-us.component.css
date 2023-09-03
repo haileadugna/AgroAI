@@ -1,0 +1,82 @@
+body{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Apply a common style to section headings */
+.aboutus h1,
+.ourvision h1,
+.whyus h1,
+.hackathon h1,
+.joinourmovement h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Apply styles to section paragraphs */
+.aboutus p,
+.ourvision p,
+.whyus p,
+.hackathon p,
+.joinourmovement p {
+  color: #666;
+  line-height: 1.6;
+  padding: 10px;
+}
+
+/* Add spacing between paragraphs */
+.aboutus p + p,
+.ourvision p + p,
+.whyus p + p,
+.hackathon p + p,
+.joinourmovement p + p {
+  margin-top: 10px;
+}
+
+/* Add a background and padding to sections */
+.aboutus,
+.ourvision,
+.whyus,
+.hackathon,
+.joinourmovement {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 768px) {
+  .aboutus,
+  .ourvision,
+  .whyus,
+  .hackathon,
+  .joinourmovement {
+    padding: 30px 0;
+  }
+}
+
+/* Center thank you message */
+.joinourmovement .thank {
+  font-style: italic;
+}
+
+/* Set a max width for content */
+.aboutus,
+.ourvision,
+.whyus,
+.hackathon,
+.joinourmovement {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Add spacing between sections */
+.aboutus + .ourvision,
+.ourvision + .whyus,
+.whyus + .hackathon,
+.hackathon + .joinourmovement {
+  margin-top: 50px;
+}

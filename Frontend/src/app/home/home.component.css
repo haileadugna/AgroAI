@@ -1,0 +1,123 @@
+
+.hero{
+  background-image: url("https://plus.unsplash.com/premium_photo-1674019234994-eceabbdd091d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YWdyaWN1bHR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60");
+  background-size: cover;
+}
+/* Additional styling for specific sections */
+.hero-content {
+  text-align: center;
+  padding: 100px 0;
+  
+}
+.hero p {
+  color: #f7f7f7;
+}
+.hero h1 {
+  color: #f7f7f7;
+  font-size: 38px;
+}
+
+.key-features-items,
+.solution-items,
+.how-it-works-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+
+.feature,
+.solution,
+.step {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  
+}
+
+.feature img
+{
+  width: 300px;
+  height: auto;
+}
+.solution img
+{
+  width: 300px;
+  height: auto;
+}
+.step img
+{
+  width: 300px;
+  height: auto;
+}
+
+
+/* .story {
+  text-align: center;
+  
+} */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature,
+  .solution,
+  .step,
+  .story {
+    width: 100%;
+  }
+}
+
+/* Optional: Style headings, paragraphs, and other elements */
+h1, h2, h3 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+/* Optional: Add background color and text color to sections */
+
+.key-features,
+.solutions,
+.how-it-works {
+  background-color: #f7f7f7;
+  color: #333;
+  padding: 50px 0;
+}
+
+/* Center section headings */
+h2 {
+  text-align: center;
+}
+
+.success-stories{
+  text-align: center;
+  background-color: #f3f3ee;
+}
+
+.success-stories {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.success-stories h2 {
+  margin-bottom: 30px;
+}
+
+.story {
+  margin-bottom: 30px;
+}
+
+.story p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.story .author {
+  font-style: italic;
+  font-size: 16px;
+}
