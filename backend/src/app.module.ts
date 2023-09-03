@@ -5,6 +5,10 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { config } from 'dotenv';
 import { ForumPostModule } from './forum-post/forum-post.module';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { AgriModule } from './agri/agri.module';
+import { FishModule } from './fish/fish.module';
 
 config()
 
@@ -15,9 +19,9 @@ config()
     MongooseModule.forRoot(process.env.MONGO_URI), 
     ConfigModule.forRoot({
       isGlobal: true,
-    }), ForumPostModule,
+    }), ForumPostModule, AgriModule, FishModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

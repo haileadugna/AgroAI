@@ -42,7 +42,7 @@ export class AppService {
     console.log(API_TOKEN);
     async function query(data) {
       const response = await fetch(
-          "https://api-inference.huggingface.co/models/gpt2",
+          "https://api-inference.huggingface.co/models/OpenLemur/lemur-70b-chat-v1",
           {
               headers: { Authorization: `Bearer ${API_TOKEN}` },
               method: "POST",
