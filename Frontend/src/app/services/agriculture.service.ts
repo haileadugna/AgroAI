@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AgricultureService {
 
-  private baseUrl = 'http://localhost:3000/api/v1/agriculture';
+  private baseUrl = 'http://localhost:3000/agri';
   constructor(private http: HttpClient) { }
 
   getListText() {
@@ -26,13 +26,13 @@ export class AgricultureService {
     const params = new HttpParams()
       .set('location', location)
       .set('space', space)
-    return this.http.get(`${this.baseUrl, (params)}/planting`)
+    return this.http.get(`${this.baseUrl, (params)}/getPlantingAd`)
   }
 
   getDiseaseManagment(disease:string) {
     const params = new HttpParams()
       .set('disease', disease);
-    return this.http.get(`${this.baseUrl, (params)}/disease-management`)
+    return this.http.get(`${this.baseUrl, (params)}/getDiseaseAd`)
   }
 
 }

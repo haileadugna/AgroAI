@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class FishfarmService {
 
-  private baseUrl = 'http://localhost:3000/api/v1/fishfarm'; // Assuming your backend's base URL
+  private baseUrl = 'http://localhost:3000/fish'; // Assuming your backend's base URL
 
   constructor(private http: HttpClient) { }
 
