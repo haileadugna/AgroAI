@@ -24,8 +24,8 @@
         
         <div class="plantinginputs">
             <div class="inputs">
-                <input type="text " placeholder="Location">
-                <input type="text " placeholder="space">
+                <input type="text " placeholder="Location" [(ngModel)]="locationinput">
+                <input type="text " placeholder="space" [(ngModel)]="spaceinput">
             </div>
             <div class="plantingbutton">
                 <button mat-raised-button color="primary">Enter</button>
@@ -48,7 +48,7 @@
 
         <div class="diseaseinputs">
 
-            <input type="text " placeholder="">
+            <input type="text " placeholder="" [(ngModel)]="diseaseinput">
 
             <div class="diseasebutton">
                 <button mat-raised-button color="primary">Enter</button>

@@ -2,12 +2,12 @@
 <body>
     
     <div class="inputpost">
-        <input type="text" placeholder="share your idea">
+        <input type="text" placeholder="share your idea" [(ngModel)]="post">
         <span class="send-icon">
             <i class="fas fa-paper-plane"></i>
         </span>
     </div>
-    <div class="posts" *ngFor="let post of posts">
+    <div class="posts" *ngFor="let post of getPosts()">
         <div class="profile">
            <a href=""><img src="../../assets/avatar.jpeg" alt=""></a> 
         </div>

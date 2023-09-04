@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,28 +6,37 @@ import { Injectable } from '@angular/core';
 })
 export class FishfarmService {
 
-  constructor() { }
+  private baseUrl = 'http://localhost:3000/api/v1'; // Assuming your backend's base URL
+
+  constructor(private http: HttpClient) { }
 
   getListText() {
-    return [" Enter your avealible waater size and your location to Generative personalized planting guide. suggesting suitable crops, planting times, and care instructions based on local climate and solutions conditions.",
-    "Submit any symptoms observed the plants to be provided with insights an potantial pests or disease along with natural remedies or recommended treatments."
-    ]
+    return [
+      "Enter your available water size and your location to generate personalized planting guide, suggesting suitable crops, planting times, and care instructions based on local climate and soil conditions.",
+      "Submit any symptoms observed in the plants to receive insights on potential pests or diseases, along with natural remedies or recommended treatments."
+    ];
   }
 
   getTemperature() {
-    return "sunny 25°C"
+    // You can fetch temperature from the backend if available
+    return this.http.get(`${this.baseUrl}/temperature`);
   }
 
   getSuggestion() {
-    return "suggesting suitable crops, planting times, and care instructions based on local climate and solutions conditions."
+    return this.http.get(`${this.baseUrl}/suggestion`);
   }
 
-  getFishing() { 
-    return "Enter your avealible space and your location to Generative personalized planting guide. suggesting suitable crops, planting times, and care instructions based on local climate and solutions conditions."
+  getFishing(location: string, waterSize: string) { 
+    const params = new HttpParams()
+      .set('location', location)
+      .set('waterSize', waterSize);
+    return this.http.get(`${this.baseUrl}/fishing`, { params });
+    
   }
 
-  getDiseaseManagment() {
-
-    return "Enter your avealible space and your location to Generative personalized planting guide. suggesting suitable crops, planting times, and care instructions based on local climate and solutions conditions."
+  getDiseaseManagment(disease: string) {
+    const params = new HttpParams()
+      .set('disease', disease);
+    return this.http.get(`${this.baseUrl}/disease-management`);
   }
 }

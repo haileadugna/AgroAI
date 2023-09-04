@@ -6,29 +6,51 @@ import { FishfarmService } from '../services/fishfarm.service';
   templateUrl: './fish-farm.component.html',
   styleUrls: ['./fish-farm.component.css']
 })
-export class FishFarmComponent implements OnInit{
+export class FishFarmComponent implements OnInit {
 
-  locationinput : string = "";
-  watersizeinput = "";
-  diseaseinput = "";
-  
+  locationinput: string = "";
+  watersizeinput: string = "";
+  diseaseinput: string = "";
+  fishfarmreturn: any;
+  suggestion: any;
+  diseasemanagmentreturn: any;
+  temperature: any;
+  listText: string[] = [];
+  location:string='';
+  watersize: string='';
+  disease: string="";
 
   constructor(private fishService: FishfarmService) { }
 
-  ngOnInit(): void {
-    
-    console.log(this.diseaseinput);
-    console.log(this.watersizeinput);
-    console.log(this.locationinput);
-    // throw new Error('Method not implemented.');
+
+  getPassFishing(){
+    this.location = this.locationinput;
+    this.watersize = this.watersizeinput;
   }
 
-  fishfarmreturn = this.fishService.getFishing();
-  suggestion = this.fishService.getSuggestion();
-  diseasemanagmentreturn = this.fishService.getDiseaseManagment();
-  temperature = this.fishService.getTemperature();
-  listText = this.fishService.getListText();
+  getPassDisease(){
+    this.disease = this.diseaseinput
+  }
 
-  
+  ngOnInit(): void {
 
+    
+    this.fishService.getFishing(this.location, this.watersizeinput).subscribe((data: any) => {
+      this.fishfarmreturn = data;
+    });
+
+    this.fishService.getSuggestion().subscribe((data: any) => {
+      this.suggestion = data;
+    });
+
+    this.fishService.getDiseaseManagment(this.disease).subscribe((data: any) => {
+      this.diseasemanagmentreturn = data;
+    });
+
+    this.fishService.getTemperature().subscribe((data: any) => {
+      this.temperature = data;
+    });
+
+    this.listText = this.fishService.getListText();
+  }
 }
