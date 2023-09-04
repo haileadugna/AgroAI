@@ -7,13 +7,13 @@
             <i class="fas fa-paper-plane"></i>
         </span>
     </div>
-    <div class="posts" *ngFor="let post of getPosts()">
+    <div class="posts" *ngFor="let post of posts">
         <div class="profile">
            <a href=""><img src="../../assets/avatar.jpeg" alt=""></a> 
         </div>
         <div class="poststext">
-            <p class="username">Haile</p>
-            <p>{{post}}</p>
+            <p class="username">{{post.username}}</p>
+            <p>{{post.text}}</p>
         </div>
             
         <span class="leavecomment"><a href="" class="fas fa-comment"></a></span>

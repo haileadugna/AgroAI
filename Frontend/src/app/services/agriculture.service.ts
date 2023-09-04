@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AgricultureService {
 
-  private baseUrl = 'http://localhost:3000/api/v1';
+  private baseUrl = 'http://localhost:3000/api/v1/agriculture';
   constructor(private http: HttpClient) { }
 
   getListText() {

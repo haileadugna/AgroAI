@@ -1,3 +1,4 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,9 +8,11 @@ export class ForumService {
 
   url = "http://localhost:3000/api/v1/forum"
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getPosts(){
-    return ["hello every body hello every body hello every body hello every body hello every body hello every body hello every body", "hello every body", "hello every body", "hello every body"];
+  getPosts(post: string){
+    const params = new HttpParams()
+      .set('post', post);
+    return this.http.get(`${this.url}/post`, { params });
   }
 }

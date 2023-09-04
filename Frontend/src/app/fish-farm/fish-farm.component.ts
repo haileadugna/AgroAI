@@ -17,25 +17,28 @@ export class FishFarmComponent implements OnInit {
   temperature: any;
   listText: string[] = [];
   location:string='';
-  watersize: string='';
+  water: string='';
   disease: string="";
+  fishtypeinput: string= "";
+  fishtype:string = "";
 
   constructor(private fishService: FishfarmService) { }
 
 
   getPassFishing(){
     this.location = this.locationinput;
-    this.watersize = this.watersizeinput;
+    this.water = this.watersizeinput;
   }
 
   getPassDisease(){
     this.disease = this.diseaseinput
+    this.fishtype = this.fishtypeinput;
   }
 
   ngOnInit(): void {
 
     
-    this.fishService.getFishing(this.location, this.watersizeinput).subscribe((data: any) => {
+    this.fishService.getFishing(this.location, this.water).subscribe((data: any) => {
       this.fishfarmreturn = data;
     });
 
@@ -43,7 +46,7 @@ export class FishFarmComponent implements OnInit {
       this.suggestion = data;
     });
 
-    this.fishService.getDiseaseManagment(this.disease).subscribe((data: any) => {
+    this.fishService.getDiseaseManagment(this.disease, this.fishtype).subscribe((data: any) => {
       this.diseasemanagmentreturn = data;
     });
 

@@ -7,7 +7,7 @@
             <div class="temp">sunny 30 *C</div>
         </div>
         <div class="weathertips">
-            <h2>Weather-Based Care Tips</h2>
+            <h2>Weather-Responsive Fish Farming Tips</h2>
 
             <p>
                 {{suggestion}}
@@ -16,7 +16,7 @@
     </div>
     <div class="platinguides">
         <div class="text">
-            <h2>Personal Fish Farming Guides</h2>
+            <h2>Fish Farm Guides</h2>
             <p>
                 {{listText[0]}}
             </p>
@@ -27,7 +27,7 @@
             <div class="inputs">
                 <input type="text " placeholder="Location" [(ngModel)] ="locationinput">
                 
-                <input type="text " placeholder="water size" [(ngModel)] = "watersizeinput">
+                <input type="text " placeholder="Water Source, Tank/pond size" [(ngModel)] = "watersizeinput">
             </div>
             <div class="plantingbutton">
                 <button mat-raised-button color="primary" (click)="getPassFishing()">Enter</button>
@@ -41,7 +41,7 @@
 
     <div class="diseasemanagement">
         <div class="text">
-            <h2>Pest and Disease Management</h2>
+            <h2>Disease and Health Data</h2>
         <p>
             {{listText[1]}}
         </p>
@@ -49,8 +49,11 @@
         
 
         <div class="diseaseinputs">
+            <div class="inputs">
+                <input type="text " placeholder="Fish Species" [(ngModel)]="fishtypeinput">
+                <input type="text " placeholder="Disease syptoms" [(ngModel)]="diseaseinput">
 
-            <input type="text " placeholder="" [(ngModel)]="diseaseinput">
+            </div>
             
             <div class="diseasebutton">
                 <button mat-raised-button color="primary" (click)="getPassDisease()">Enter</button>
