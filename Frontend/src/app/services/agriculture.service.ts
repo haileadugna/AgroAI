@@ -14,25 +14,22 @@ export class AgricultureService {
     "Submit any symptoms observed the plants to be provided with insights an potantial pests or disease along with natural remedies or recommended treatments."
     ]
   }
-  getTemperature() {
-    return this.http.get(`${this.baseUrl}/temperature`)
-  }
 
   getSuggestion() {
-    return this.http.get(`${this.baseUrl}/suggestion`)
+    return this.http.get(`${this.baseUrl}/weather`)
   }
 
   getPlanting(location:string, space:string) {
     const params = new HttpParams()
       .set('location', location)
       .set('space', space)
-    return this.http.get(`${this.baseUrl, (params)}/getPlantingAd`)
+    return this.http.get(`${this.baseUrl, (params)}/planting`)
   }
 
   getDiseaseManagment(disease:string) {
     const params = new HttpParams()
       .set('disease', disease);
-    return this.http.get(`${this.baseUrl, (params)}/getDiseaseAd`)
+    return this.http.get(`${this.baseUrl, (params)}/disease`)
   }
 
 }

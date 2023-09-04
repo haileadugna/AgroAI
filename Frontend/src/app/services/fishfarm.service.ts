@@ -17,13 +17,8 @@ export class FishfarmService {
     ];
   }
 
-  getTemperature() {
-    // You can fetch temperature from the backend if available
-    return this.http.get(`${this.baseUrl}/temperature`);
-  }
-
   getSuggestion() {
-    return this.http.get(`${this.baseUrl}/suggestion`);
+    return this.http.get(`${this.baseUrl}/weather`);
   }
 
   getFishing(location: string, waterSize: string) { 
@@ -39,6 +34,6 @@ export class FishfarmService {
       .set('disease', disease)
       .set('fishtype', fishtype);
 
-    return this.http.get(`${this.baseUrl}/disease-management`);
+    return this.http.get(`${this.baseUrl}/disease`);
   }
 }
