@@ -4,7 +4,7 @@
     <div class="inputpost">
         <input type="text" placeholder="share your idea" [(ngModel)]="post">
         <span class="send-icon">
-            <i class="fas fa-paper-plane"></i>
+            <i class="fas fa-paper-plane" (click)="getCreatePost()"></i>
         </span>
     </div>
     <div class="posts" *ngFor="let post of posts">

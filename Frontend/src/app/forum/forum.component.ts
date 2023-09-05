@@ -12,16 +12,17 @@ export class ForumComponent implements OnInit {
             {text: "haslfskadfj;sa", username: 'haile' , image: 'image3'},
           ];
   post: string = "";
-  postpass: string="";
-
-  getPassPost(){
-    this.postpass = this.post;
-  }
 
   constructor(private postService: ForumService) { }
   ngOnInit(): void {
 
-    this.postService.getPosts(this.postpass).subscribe((data: any) =>{
+    this.postService.getPosts().subscribe((data: any) =>{
+      this.posts = data;
+    });
+  }
+
+  getCreatePost(){
+    this.postService.createPost({text: this.post, token: ''}).subscribe((data: any) =>{
       this.posts = data;
     });
   }

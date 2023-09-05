@@ -10,9 +10,12 @@ export class ForumService {
 
   constructor(private http: HttpClient) { }
 
-  getPosts(post: string){
-    const params = new HttpParams()
-      .set('post', post);
-    return this.http.get(`${this.url}/post`, { params });
+  createPost(postData: any) {
+    return this.http.post(`${this.url}/post`, postData);
+  }
+
+  // GET method to fetch all existing posts
+  getPosts() {
+    return this.http.get(`${this.url}/posts`);
   }
 }

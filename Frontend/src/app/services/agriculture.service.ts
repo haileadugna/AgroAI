@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AgricultureService {
 
-  private baseUrl = 'http://localhost:3000/api/v1/agriculture';
+  private baseUrl = 'http://localhost:3000/api/v1/agri';
   constructor(private http: HttpClient) { }
 
   getListText() {
@@ -14,25 +14,19 @@ export class AgricultureService {
     "Submit any symptoms observed the plants to be provided with insights an potantial pests or disease along with natural remedies or recommended treatments."
     ]
   }
-  getTemperature() {
-    return this.http.get(`${this.baseUrl}/temperature`)
-  }
 
   getSuggestion() {
-    return this.http.get(`${this.baseUrl}/suggestion`)
+    return this.http.get(`${this.baseUrl}/weather`)
   }
 
   getPlanting(location:string, space:string) {
-    const params = new HttpParams()
-      .set('location', location)
-      .set('space', space)
-    return this.http.get(`${this.baseUrl, (params)}/planting`)
+    const body = location + space;
+    return this.http.get(`${this.baseUrl, (body)}/planting`)
   }
 
   getDiseaseManagment(disease:string) {
-    const params = new HttpParams()
-      .set('disease', disease);
-    return this.http.get(`${this.baseUrl, (params)}/disease-management`)
+    const body = disease;
+    return this.http.get(`${this.baseUrl, (body)}/disease`)
   }
 
 }

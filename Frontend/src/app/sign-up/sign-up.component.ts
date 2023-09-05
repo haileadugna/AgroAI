@@ -13,7 +13,7 @@ export class SignUpComponent {
     hide = true;
     email = new FormControl('', [Validators.required, Validators.email]);
 
-    myUrl:string = "https://deploystudypalbackend-development.up.railway.app/auth/signup"
+    myUrl:string = "https://localhost:3000/api/v1/auth/signup"
 
     constructor(private http:HttpClient, private router:Router){
 

@@ -17,28 +17,19 @@ export class FishfarmService {
     ];
   }
 
-  getTemperature() {
-    // You can fetch temperature from the backend if available
-    return this.http.get(`${this.baseUrl}/temperature`);
-  }
-
   getSuggestion() {
-    return this.http.get(`${this.baseUrl}/suggestion`);
+    return this.http.get(`${this.baseUrl}/weather`);
   }
 
   getFishing(location: string, waterSize: string) { 
-    const params = new HttpParams()
-      .set('location', location)
-      .set('waterSize', waterSize);
-    return this.http.get(`${this.baseUrl}/fishing`, { params });
+    const body = location + waterSize;
+    return this.http.get(`${this.baseUrl, (body)}/fishing`);
     
   }
 
   getDiseaseManagment(disease: string, fishtype: string) {
-    const params = new HttpParams()
-      .set('disease', disease)
-      .set('fishtype', fishtype);
+    const body = disease + fishtype;
 
-    return this.http.get(`${this.baseUrl}/disease-management`);
+    return this.http.get(`${this.baseUrl, (body)}/disease`);
   }
 }

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   hide = true;
-  private myUrl = "https://deploystudypalbackend-development.up.railway.app/auth/login"
+  private myUrl = "https://localhost:3000/api/v1/auth/login"
   constructor(private http:HttpClient, private router:Router){}
 
 
