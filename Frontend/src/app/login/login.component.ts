@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   hide = true;
-  private myUrl = "https://localhost:3000/api/v1/auth/login"
+  private myUrl = "http://localhost:3000/auth/login"
   constructor(private http:HttpClient, private router:Router){}
 
 
@@ -23,7 +23,7 @@ export class LoginComponent {
         (res)=>{
         console.log(res)
         localStorage.setItem("token",res.access_token)
-        this.router.navigate(["/Posts"])
+        this.router.navigate(["/home"])
 
         
       },

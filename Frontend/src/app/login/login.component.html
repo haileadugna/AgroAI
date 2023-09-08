@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Login</h1>
     <!-- ngForm   (ngSubmit)="onFormSubmission(loginForm.value)" -->
-    <form #loginForm="" >
+    <form #loginForm="ngForm" (ngSubmit)="onFormSubmission(loginForm.value)">
         <mat-form-field appearance="fill">
             <mat-label>Enter a Username</mat-label>
             <input ngModel name="username" matInput placeholder="username" required>

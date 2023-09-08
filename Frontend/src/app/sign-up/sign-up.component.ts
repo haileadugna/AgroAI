@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,32 +9,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
+  hide = true;
+  signupForm: FormGroup;
+  myUrl: string = "http://localhost:3000/auth";
 
-    hide = true;
-    email = new FormControl('', [Validators.required, Validators.email]);
+  constructor(private http: HttpClient, private router: Router, private fb: FormBuilder) {
+    this.signupForm = this.fb.group({
+      fullname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      profilepic: ['haklejk'],
+    });
+  }
 
-    myUrl:string = "https://localhost:3000/api/v1/auth/signup"
-
-    constructor(private http:HttpClient, private router:Router){
-
+  getErrorMessage() {
+    const emailControl = this.signupForm.get('email');
+    if (emailControl?.hasError('required')) {
+      return 'You must enter a value';
     }
-  
-    getErrorMessage() {
-      if (this.email.hasError('required')) {
-        return 'You must enter a value';
-      }
-  
-      return this.email.hasError('email') ? 'Not a valid email' : '';
+
+    return emailControl?.hasError('email') ? 'Not a valid email' : '';
+  }
+
+  onFormSubmission() {
+    if (this.signupForm.invalid) {
+      // Form is invalid, handle accordingly (display errors, prevent submission, etc.)
+      return;
     }
 
-    onFormSubmission(form:any){
-      console.log(form)
+    const formValue = this.signupForm.value;
+    console.log(formValue);
 
-      this.http.post<any>(this.myUrl, form).subscribe((res)=>{
-        console.log(res)
-        // localStorage.setItem("tokenSignup",res.access_token)
-        this.router.navigate(["/login"])
-     
-      })
-    }
+    this.http.post<any>(`${this.myUrl}/signup`, formValue).subscribe((res) => {
+      console.log(res);
+      // localStorage.setItem("tokenSignup", res.access_token);
+      this.router.navigate(['/login']);
+    });
+  }
 }

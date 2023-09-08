@@ -34,8 +34,6 @@ export class AgricultureComponent implements OnInit {
 
     this.suggestion = this.agriServices.getSuggestion();
 
-    this.temperature = this.agriServices.getTemperature();
-
     this.listText = this.agriServices.getListText();
   }
 

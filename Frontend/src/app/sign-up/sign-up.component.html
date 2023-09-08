@@ -1,35 +1,35 @@
 <div class="container">
-    <h1>Create Account</h1>
-    <!-- ngForm    (ngSubmit)="onFormSubmission(signupForm.value)" -->
-    <form #signupForm="" >
-        <mat-form-field appearance="fill">
-            <mat-label>Enter Your Full Name</mat-label>
-            <input ngModel name="fullname" matInput placeholder="Full Name" required>
-            <mat-error>{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-            <mat-label>Enter your email</mat-label>
-            <input ngModel name="email" matInput placeholder="pat@example.com" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-            <mat-label>Enter a Username</mat-label>
-            <input ngModel name="username" matInput placeholder="username" required>
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-            <mat-label>Enter your password</mat-label>
-            <input ngModel name="password" matInput type="password" [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field>
-          <br>
-          <div class="button-container">
-            <button type="submit" id="signup-btn" mat-flat-button color="primary">Sign Up</button>
-          </div>
-          <div class="bottom-prompt"> already have an account? <a routerLink="/login"> <span class="sign-in-prompt"> Sign In</span></a> here</div>
-      </form>
+  <h1>Create Account</h1>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onFormSubmission()">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Your Full Name</mat-label>
+      <input formControlName="fullname" matInput placeholder="Full Name" required>
+      <mat-error>{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input formControlName="email" matInput placeholder="pat@example.com" required>
+      <mat-error *ngIf="signupForm.get('email')?.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter a Username</mat-label>
+      <input formControlName="username" matInput placeholder="username" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input formControlName="password" matInput type="password" [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button type="submit" id="signup-btn" mat-flat-button color="primary">Sign Up</button>
+    </div>
+    <div class="bottom-prompt"> already have an account? <a routerLink="/login"> <span class="sign-in-prompt"> Sign In</span></a> here</div>
+  </form>
 </div>

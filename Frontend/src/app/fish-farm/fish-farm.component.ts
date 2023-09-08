@@ -50,10 +50,6 @@ export class FishFarmComponent implements OnInit {
       this.diseasemanagmentreturn = data;
     });
 
-    this.fishService.getTemperature().subscribe((data: any) => {
-      this.temperature = data;
-    });
-
     this.listText = this.fishService.getListText();
   }
 }
