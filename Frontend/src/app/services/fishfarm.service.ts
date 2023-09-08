@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class FishfarmService {
 
-  private baseUrl = 'http://localhost:3000/api/v1/fishfarm'; // Assuming your backend's base URL
+  private baseUrl = 'http://localhost:3000/fish'; // Assuming your backend's base URL
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +30,6 @@ export class FishfarmService {
   getDiseaseManagment(disease: string, fishtype: string) {
     const body = disease + fishtype;
 
-    return this.http.get(`${this.baseUrl, (body)}/disease`);
+    return this.http.get(`${this.baseUrl}/disease-management`);
   }
 }
